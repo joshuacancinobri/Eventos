@@ -1,0 +1,41 @@
+.form-registro {
+    background: white;
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+legend { color: #2c3e50; font-weight: bold; }
+label { display: block; margin-top: 10px; font-weight: bold; }
+input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; box-sizing: border-box; }
+
+.acciones-form { display: flex; gap: 10px; margin-top: 20px; }
+
+.btn-guardar {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px;
+    flex: 1;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-cancelar {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px;
+    flex: 1;
+    cursor: pointer;
+    border-radius: 4px;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio - Eventos</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/eventos.css">
+</head>
+<body>
+<header>
+    <div class="logo-container">
+        <img src="../imagenes/logo.png" style="height: 80px;">
+        <h1>Eventos</h1>
+    </div>
+    <nav>
+        <a href="index.html" class="active">Inicio</a>
+        <a href="registro.html">Registrar Participante</a>
+        <a href="participantes.html">Ver Participantes</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2 style="text-align: center;">Próximos Eventos</h2>
+
+    <div class="grid-eventos">
+
+        <article class="card-evento">
+            <h3>Conferencia Tech 2025</h3>
+            <span class="badge-cat">Tecnología</span>
+            <p><strong>Fecha:</strong> 15 Oct 2025 | 10:00 AM</p>
+            <p><strong>Lugar:</strong> Ciudad de México</p>
+            <p class="desc">Tendencias en IA y Desarrollo Web.</p>
+
+            <div class="stats">
+                <p>👥 Asistentes: <span id="asist-Conferencia Tech 2025">0</span></p>
+                <p>🎤 Ponentes: <span id="pon-Conferencia Tech 2025">0</span></p>
+            </div>
+
+            <div class="acciones">
+                <a href="registro.html" class="btn-azul">Registrar Participante</a>
+                <a href="participantes.html" class="btn-gris">Ver Participantes</a>
+            </div>
+        </article>
+
+        <article class="card-evento">
+            <h3>Workshop de CSS</h3>
+            <span class="badge-cat">Educación</span>
+            <p><strong>Fecha:</strong> 20 Nov 2025 | 04:00 PM</p>
+            <p><strong>Lugar:</strong> Online</p>
+            <p class="desc">Taller práctico de Flexbox y Grid.</p>
+
+            <div class="stats">
+                <p>👥 Asistentes: <span id="asist-Workshop de CSS">0</span></p>
+                <p>🎤 Ponentes: <span id="pon-Workshop de CSS">0</span></p>
+            </div>
+
+            <div class="acciones">
+                <a href="registro.html" class="btn-azul">Registrar Participante</a>
+                <a href="participantes.html" class="btn-gris">Ver Participantes</a>
+            </div>
+        </article>
+
+        <article class="card-evento">
+            <h3>Cumbre de Startups</h3>
+            <span class="badge-cat">Negocios</span>
+            <p><strong>Fecha:</strong> 05 Dic 2025 | 09:00 AM</p>
+            <p><strong>Lugar:</strong> Monterrey</p>
+            <p class="desc">Networking para emprendedores.</p>
+
+            <div class="stats">
+                <p>👥 Asistentes: <span id="asist-Cumbre de Startups">0</span></p>
+                <p>🎤 Ponentes: <span id="pon-Cumbre de Startups">0</span></p>
+            </div>
+
+            <div class="acciones">
+                <a href="registro.html" class="btn-azul">Registrar Participante</a>
+                <a href="participantes.html" class="btn-gris">Ver Participantes</a>
+            </div>
+        </article>
+
+        <article class="card-evento">
+            <h3>Hackathon Global</h3>
+            <span class="badge-cat">Tecnología</span>
+            <p><strong>Fecha:</strong> 10 Ene 2026 | 24 Horas</p>
+            <p><strong>Lugar:</strong> Guadalajara</p>
+            <p class="desc">Competencia de programación.</p>
+
+            <div class="stats">
+                <p>👥 Asistentes: <span id="asist-Hackathon Global">0</span></p>
+                <p>🎤 Ponentes: <span id="pon-Hackathon Global">0</span></p>
+            </div>
+
+            <div class="acciones">
+                <a href="registro.html" class="btn-azul">Registrar Participante</a>
+                <a href="participantes.html" class="btn-gris">Ver Participantes</a>
+            </div>
+        </article>
+
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Sistema de Eveoos</p>
+</footer>
+
+<script>
+    window.onload = function() {
+        const datos = JSON.parse(localStorage.getItem('formData')) || [];
+        const lista = Array.isArray(datos) ? datos : [datos];
+
+        const eventos = ["Conferencia Tech 2025", "Workshop de CSS", "Cumbre de Startups", "Hackathon Global"];
+
+        eventos.forEach(nombre => {
+            const asis = lista.filter(r => r.evento === nombre && r.tipo === "Asistente").length;
+            const pon = lista.filter(r => r.evento === nombre && r.tipo === "Ponente").length;
+
+            const sA = document.getElementById(`asist-${nombre}`);
+            const sP = document.getElementById(`pon-${nombre}`);
+            if(sA) sA.innerText = asis;
+            if(sP) sP.innerText = pon;
+        });
+    }
+</script>
+</body>
+</html>

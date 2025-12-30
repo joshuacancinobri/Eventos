@@ -1,0 +1,68 @@
+:root {
+    --primary: #010001;
+    --secondary: #e6b47a;
+    --bg-light: #f4f4f4;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../imagenes/fondo.jpg');
+    background-size: cover;      /* Escala la imagen para cubrir toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat;/* Evita que la imagen se repita como mosaico */
+    background-attachment: fixed;/* Efecto visual: la imagen se queda fija al hacer scroll */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: var(--primary);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container { display: flex; align-items: center; gap: 10px; }
+
+nav a {
+    color: #bdc3c7;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/* Indicador de página activa */
+nav a.active {
+    color: white;
+    border-bottom: 2px solid var(--secondary);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto;      /* Un poco más de margen arriba y abajo */
+    padding: 30px;          /* Espacio interno para que el texto no pegue al borde */
+    width: 95%;             /* Usamos 95% para que no toque los bordes en móviles */
+    box-sizing: border-box;
+
+    /* --- AQUÍ ESTÁ EL FONDO BLANCO --- */
+    background-color: #dcdcdc;
+
+    /* --- Estilos opcionales para que se vea mejor --- */
+    border-radius: 10px;    /* Bordes redondeados */
+    box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Una sombra negra para resaltar del fondo */
+    color: #333;            /* Asegura que el texto sea oscuro para leerse bien */
+}
+
+footer {
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+}

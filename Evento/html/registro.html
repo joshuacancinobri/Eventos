@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/registro.css">
+</head>
+<body>
+<header>
+    <div class="logo-container">
+        <img src="../imagenes/logo.png" alt="Logo" style="height: 80px;">
+        <h1>Registro</h1>
+    </div>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="registro.html" class="active">Registrar Participante</a>
+        <a href="participantes.html">Ver Participantes</a>
+    </nav>
+</header>
+
+<div class="container">
+    <form id="miForm" class="form-registro">
+        <h2 style="text-align:center;">Nuevo Registro</h2>
+
+        <fieldset>
+            <legend>Evento y Rol</legend>
+            <label>Evento:</label>
+            <select name="evento" required>
+                <option value="Conferencia Tech 2025">Conferencia Tech 2025</option>
+                <option value="Workshop de CSS">Workshop de CSS</option>
+                <option value="Cumbre de Startups">Cumbre de Startups</option>
+                <option value="Hackathon Global">Hackathon Global</option>
+            </select>
+
+            <label>Tipo:</label>
+            <select name="tipo" id="tipoSelect" required onchange="mostrarCampos()">
+                <option value="">Seleccione...</option>
+                <option value="Asistente">Asistente</option>
+                <option value="Ponente">Ponente</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <label>Nombre:</label> <input type="text" name="nombre" required>
+            <label>Email:</label> <input type="email" name="email" required>
+            <label>Teléfono:</label> <input type="tel" name="telefono" required>
+            <label>País/Ciudad:</label> <input type="text" name="pais_ciudad" required>
+            <label>Empresa:</label> <input type="text" name="empresa">
+        </fieldset>
+
+        <fieldset id="camposAsistente" style="display:none;">
+            <legend>Asistente</legend>
+            <label>Nivel:</label>
+            <select name="nivel_experiencia">
+                <option>Principiante</option><option>Intermedio</option><option>Avanzado</option>
+            </select>
+            <label>Intereses:</label><input type="text" name="intereses">
+            <label><input type="checkbox" name="certificado"> Requiere Certificado</label>
+        </fieldset>
+
+        <fieldset id="camposPonente" style="display:none;">
+            <legend>Ponente</legend>
+            <label>Título Ponencia:</label><input type="text" name="titulo_ponencia">
+            <label>Duración (min):</label><input type="number" name="duracion">
+            <label>Requerimientos:</label><textarea name="requerimientos"></textarea>
+            <label>Biografía:</label><textarea name="biografia"></textarea>
+            <label>Redes:</label><input type="text" name="redes">
+        </fieldset>
+
+        <div class="acciones-form">
+            <button type="button" class="btn-guardar" onclick="guardarForm()">Registrar</button>
+            <button type="reset" class="btn-cancelar" onclick="limpiarMensaje()">Cancelar</button>
+        </div>
+
+        <div style="text-align: center; margin-top: 15px;">
+            <a href="participantes.html" style="color: var(--secondary);">Ver participantes registrados</a>
+        </div>
+
+        <p id="mensaje" style="text-align:center; color:green; font-weight:bold;"></p>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2025 Sistema de Eventos</p>
+</footer>
+
+<script>
+    function mostrarCampos() {
+        const tipo = document.getElementById('tipoSelect').value;
+        document.getElementById('camposAsistente').style.display = (tipo === 'Asistente') ? 'block' : 'none';
+        document.getElementById('camposPonente').style.display = (tipo === 'Ponente') ? 'block' : 'none';
+    }
+
+    function guardarForm() {
+        const form = document.getElementById('miForm');
+        if(!form.checkValidity()) { alert("Completa los campos obligatorios."); return; }
+
+        // Lógica basada en tu ejemplo
+        const datos = Object.fromEntries(new FormData(form));
+        datos.fecha_registro = new Date().toLocaleDateString();
+
+        let lista = JSON.parse(localStorage.getItem('formData')) || [];
+        if(!Array.isArray(lista)) lista = [lista];
+
+        lista.push(datos);
+        localStorage.setItem('formData', JSON.stringify(lista));
+
+        document.getElementById('mensaje').innerText = "Registro guardado exitosamente";
+        form.reset();
+        mostrarCampos();
+    }
+
+    function limpiarMensaje() {
+        document.getElementById('mensaje').innerText = "";
+        mostrarCampos(); // Oculta los campos extra al cancelar
+    }
+</script>
+</body>
+</html>

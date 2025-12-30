@@ -1,0 +1,53 @@
+.grid-eventos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card-evento {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 260px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.card-evento:hover { transform: translateY(-5px); }
+
+.card-evento h3 { margin-top: 0; color: #424240; }
+
+.badge-cat {
+    background-color: #c88b4c;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+.stats {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 0.9rem;
+}
+
+.acciones { display: flex; flex-direction: column; gap: 8px; }
+
+.btn-azul, .btn-gris {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.btn-azul { background: #976b6c; }
+.btn-gris { background: #6a6b6a; }
+
+.btn-azul:hover, .btn-gris:hover { opacity: 0.9; }
