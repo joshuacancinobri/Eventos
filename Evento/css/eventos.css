@@ -20,7 +20,7 @@
 .card-evento h3 { margin-top: 0; color: #424240; }
 
 .badge-cat {
-    background-color: #c88b4c;
+    background-color: #469db3;
     color: white;
     padding: 2px 8px;
     border-radius: 12px;
@@ -47,7 +47,7 @@
     color: white;
 }
 
-.btn-a { background: #976b6c; }
-.btn-b { background: #6a6b6a; }
+.btn-a { background: #58c9e4; }
+.btn-b { background: #1e4851; }
 
 .btn-a:hover, .btn-b:hover { opacity: 0.9; }

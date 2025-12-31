@@ -5,7 +5,6 @@
     <title>Participantes</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        /* Estilos locales para tabla y tabs */
         .tabs { display: flex; gap: 10px; border-bottom: 2px solid #ccc; margin-bottom: 20px; }
         .tab-btn { padding: 10px 20px; background: #eee; border: none; cursor: pointer; }
         .tab-btn.active { background: var(--secondary); color: white; }
@@ -17,13 +16,13 @@
         th { background: var(--primary); color: white; }
 
         .badge-principal {
-            background-color: gold;
+            background-color: #82f2a4;
             color: black;
             font-size: 0.75rem;
             padding: 2px 6px;
             border-radius: 4px;
             margin-left: 5px;
-            border: 1px solid #d4ac0d;
+            border: 1px solid #5cd9f8;
         }
 
         .tipo-indicador {
@@ -32,10 +31,10 @@
             border-radius: 50%;
             margin-right: 5px;
         }
-        .ind-asistente { background-color: #b1b1b1; }
-        .ind-ponente { background-color: #ffb500; }
+        .ind-asistente { background-color: #66e3f4; }
+        .ind-ponente { background-color: #86f8a4; }
 
-        /* Estilo para resumir la biografía visualmente (truco CSS para que no ocupe mucho espacio) */
+        /* resumir la biografía */
         .col-bio {
             max-width: 150px;
             white-space: nowrap;
@@ -58,9 +57,6 @@
         <a href="participantes.html" class="active">Ver Participantes</a>
     </nav>
     <style>
-        /* ... tus otros estilos ... */
-
-        /* AGREGA ESTO AL FINAL DE LA LISTA DE ESTILOS: */
         #tab-stats h3,
         #graficoNivel {
             color: white;
@@ -185,7 +181,7 @@
 
         let html = '';
         for(let k in counts) {
-            html += `<div>${k}: ${counts[k]} <div style="background:#ffb500; height:10px; width:${counts[k] * 20}px"></div></div>`;
+            html += `<div>${k}: ${counts[k]} <div style="background:#d024fa; height:10px; width:${counts[k] * 20}px"></div></div>`;
         }
         document.getElementById('graficoNivel').innerHTML = html;
     }

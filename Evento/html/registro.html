@@ -95,9 +95,13 @@
 
     function guardarForm() {
         const form = document.getElementById('miForm');
-        if(!form.checkValidity()) { alert("Completa los campos obligatorios."); return; }
 
-        // Lógica basada en tu ejemplo
+        // burbuja de error  //
+        if (!form.reportValidity()) {
+            return;
+        }
+
+
         const datos = Object.fromEntries(new FormData(form));
         datos.fecha_registro = new Date().toLocaleDateString();
 
@@ -114,7 +118,7 @@
 
     function limpiarMensaje() {
         document.getElementById('mensaje').innerText = "";
-        mostrarCampos(); // Oculta los campos extra al cancelar
+        mostrarCampos(); // Oculta los campos extra al cancelar //
     }
 </script>
 </body>
