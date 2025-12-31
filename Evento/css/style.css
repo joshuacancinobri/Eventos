@@ -51,11 +51,7 @@ nav a.active {
     box-sizing: border-box;
 
     /* --- AQUÍ ESTÁ EL FONDO BLANCO --- */
-    background-color: #dcdcdc;
 
-    /* --- Estilos opcionales para que se vea mejor --- */
-    border-radius: 10px;    /* Bordes redondeados */
-    box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Una sombra negra para resaltar del fondo */
     color: #333;            /* Asegura que el texto sea oscuro para leerse bien */
 }
 

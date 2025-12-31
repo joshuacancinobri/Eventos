@@ -37,7 +37,7 @@
 
 .acciones { display: flex; flex-direction: column; gap: 8px; }
 
-.btn-azul, .btn-gris {
+.btn-a, .btn-b {
     display: block;
     text-align: center;
     padding: 10px;
@@ -47,7 +47,7 @@
     color: white;
 }
 
-.btn-azul { background: #976b6c; }
-.btn-gris { background: #6a6b6a; }
+.btn-a { background: #976b6c; }
+.btn-b { background: #6a6b6a; }
 
-.btn-azul:hover, .btn-gris:hover { opacity: 0.9; }
+.btn-a:hover, .btn-b:hover { opacity: 0.9; }

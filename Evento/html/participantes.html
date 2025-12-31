@@ -32,8 +32,8 @@
             border-radius: 50%;
             margin-right: 5px;
         }
-        .ind-asistente { background-color: #3498db; }
-        .ind-ponente { background-color: #e67e22; }
+        .ind-asistente { background-color: #b1b1b1; }
+        .ind-ponente { background-color: #ffb500; }
 
         /* Estilo para resumir la biografía visualmente (truco CSS para que no ocupe mucho espacio) */
         .col-bio {
@@ -57,6 +57,15 @@
         <a href="registro.html">Registrar Participante</a>
         <a href="participantes.html" class="active">Ver Participantes</a>
     </nav>
+    <style>
+        /* ... tus otros estilos ... */
+
+        /* AGREGA ESTO AL FINAL DE LA LISTA DE ESTILOS: */
+        #tab-stats h3,
+        #graficoNivel {
+            color: white;
+        }
+    </style>
 </header>
 
 <div class="container">
@@ -176,7 +185,7 @@
 
         let html = '';
         for(let k in counts) {
-            html += `<div>${k}: ${counts[k]} <div style="background:#3498db; height:10px; width:${counts[k]*20}px"></div></div>`;
+            html += `<div>${k}: ${counts[k]} <div style="background:#ffb500; height:10px; width:${counts[k] * 20}px"></div></div>`;
         }
         document.getElementById('graficoNivel').innerHTML = html;
     }
