@@ -25,9 +25,9 @@
     <div class="grid-eventos">
 
         <article class="card-evento">
-            <h3>Conferencia Tech 2025</h3>
+            <h3>Conferencia IA 2026</h3>
             <span class="badge-cat">Tecnología</span>
-            <p><strong>Fecha:</strong> 15 Oct 2025 | 10:00 AM</p>
+            <p><strong>Fecha:</strong> 8 Ene 2026 | 10:00 AM</p>
             <p><strong>Lugar:</strong> Ciudad de México</p>
             <p class="desc">Tendencias en IA y Desarrollo Web.</p>
 
@@ -43,11 +43,11 @@
         </article>
 
         <article class="card-evento">
-            <h3>Workshop de CSS</h3>
+            <h3>English.compile()</h3>
             <span class="badge-cat">Educación</span>
-            <p><strong>Fecha:</strong> 20 Nov 2025 | 04:00 PM</p>
+            <p><strong>Fecha:</strong> 18 Ene 2026 | 04:00 PM</p>
             <p><strong>Lugar:</strong> Online</p>
-            <p class="desc">Taller práctico de Flexbox y Grid.</p>
+            <p class="desc">Conecta tus habilidades de programación con el inglés técnico.</p>
 
             <div class="stats">
                 <p>👥 Asistentes: <span id="asist-Workshop de CSS">0</span></p>
@@ -61,11 +61,11 @@
         </article>
 
         <article class="card-evento">
-            <h3>Cumbre de Startups</h3>
+            <h3>LogicBiz</h3>
             <span class="badge-cat">Negocios</span>
-            <p><strong>Fecha:</strong> 05 Dic 2025 | 09:00 AM</p>
-            <p><strong>Lugar:</strong> Monterrey</p>
-            <p class="desc">Networking para emprendedores.</p>
+            <p><strong>Fecha:</strong> 28 Ene 2026 | 09:00 AM</p>
+            <p><strong>Lugar:</strong> Ciudad de México</p>
+            <p class="desc">Estrategia empresarial y gestión para proyectos de código y tecnología.</p>
 
             <div class="stats">
                 <p>👥 Asistentes: <span id="asist-Cumbre de Startups">0</span></p>
@@ -79,11 +79,11 @@
         </article>
 
         <article class="card-evento">
-            <h3>Hackathon Global</h3>
+            <h3>SecureCode</h3>
             <span class="badge-cat">Tecnología</span>
-            <p><strong>Fecha:</strong> 10 Ene 2026 | 24 Horas</p>
-            <p><strong>Lugar:</strong> Guadalajara</p>
-            <p class="desc">Competencia de programación.</p>
+            <p><strong>Fecha:</strong> 8 Feb 2026 | 12:00 PM</p>
+            <p><strong>Lugar:</strong> Online</p>
+            <p class="desc">Prácticas esenciales para blindar software y prevenir vulnerabilidades.</p>
 
             <div class="stats">
                 <p>👥 Asistentes: <span id="asist-Hackathon Global">0</span></p>
@@ -100,7 +100,7 @@
 </div>
 
 <footer>
-    <p>&copy; 2025 Sistema de Eveoos</p>
+    <p>&copy; 2025 Sistema de Eventos - TEN</p>
 </footer>
 
 <script>
@@ -108,7 +108,7 @@
         const datos = JSON.parse(localStorage.getItem('formData')) || [];
         const lista = Array.isArray(datos) ? datos : [datos];
 
-        const eventos = ["Conferencia Tech 2025", "Workshop de CSS", "Cumbre de Startups", "Hackathon Global"];
+        const eventos = ["Conferencia IA 2026", "English.compile()", "LogicBiz", "SecureCode"];
 
         eventos.forEach(nombre => {
             const asis = lista.filter(r => r.evento === nombre && r.tipo === "Asistente").length;
