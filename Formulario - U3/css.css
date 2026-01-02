@@ -7,16 +7,14 @@ body {
     background-attachment: fixed;
     margin: 0;
     padding: 20px;
-    display: flex; /* Flexbox para centrar */
+    display: flex;
     justify-content: center;
 }
-
 h1 {
     text-align: center;
     color: #ffffff;
     margin-bottom: 20px;
 }
-
 label {
     display: block;
     margin-top: 15px;
@@ -24,13 +22,12 @@ label {
     font-weight: bold;
     color: #ffffff;
 }
-
 input, select, textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px; /* Bordes redondeados */
-    box-sizing: border-box; /* Modelo de caja */
+    border-radius: 4px;
+    box-sizing: border-box;
     font-size: 14px;
 }
 
@@ -40,48 +37,41 @@ button {
     font-weight: bold;
     transition: opacity 0.3s;
 }
-
-/* --- 2. SELECTORES DE CLASE (3+) --- */
 .container {
-    background-color: #000127; /* Caja blanca requerida */
+    background-color: #000127;
     width: 100%;
     max-width: 500px;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
-
 .acciones {
     margin-top: 25px;
     display: flex;
     gap: 15px;
 }
-
 .btn-enviar {
-    background-color: #27ae60; /* Verde */
+    background-color: #27ae60;
     color: white;
     border: none;
     padding: 12px;
     width: 100%;
     border-radius: 5px;
 }
-
 .btn-limpiar {
-    background-color: #e74c3c; /* Rojo */
+    background-color: #e74c3c;
     color: white;
     border: none;
     padding: 12px;
     width: 100%;
     border-radius: 5px;
 }
-
 .terminos-wrapper {
     margin-top: 20px;
     background-color: #0d1c46;
     padding: 10px;
     border-radius: 4px;
 }
-
 .label-inline {
     display: flex;
     align-items: center;
@@ -89,53 +79,32 @@ button {
     font-weight: normal;
     margin: 0;
 }
-
-/* --- 3. SELECTORES DE ID (2+) --- */
 #mensaje {
-    resize: vertical; /* Permite redimensionar solo verticalmente */
+    resize: vertical;
 }
-
 #checkTerminos {
-    width: auto; /* Checkbox tamaño normal */
+    width: auto;
     margin: 0;
 }
-
-/* --- 4. PSEUDOELEMENTOS (2+) --- */
-
-/* ::after - Marca visualmente los campos obligatorios */
 label.requerido::after {
     content: " *";
     color: #e74c3c;
 }
-
-/* ::placeholder - Estilo del texto de ayuda [cite: 492] */
 ::placeholder {
     color: #95a5a6;
     font-style: italic;
 }
-
-/* --- 5. PSEUDOCLASE (2+) --- */
-
-/* :focus - Resalta el campo activo */
 input:focus, select:focus, textarea:focus {
     outline: none;
     border-color: #3498db;
     background-color: #eaf2f8;
 }
-
-/* :hover - Efecto al pasar el mouse sobre botones */
 button:hover {
     opacity: 0.85;
 }
-
-/* --- 6. VALIDACIÓN VISUAL (Requerido: Estados válidos/inválidos)  --- */
-
-/* Si el campo es válido (y no está vacío), borde izquierdo verde */
 input:valid:not(:placeholder-shown), textarea:valid:not(:placeholder-shown) {
     border-left: 5px solid #27ae60;
 }
-
-/* Si el campo es inválido (y no está vacío), borde izquierdo rojo */
 input:invalid:not(:placeholder-shown), textarea:invalid:not(:placeholder-shown) {
     border-left: 5px solid #e74c3c;
 }
